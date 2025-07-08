@@ -1,0 +1,64 @@
+package stepdefinitions;
+
+import actions.BasketPage;
+import io.cucumber.java.en.Given;
+import io.cucumber.java.en.Then;
+import io.cucumber.java.en.When;
+import io.restassured.response.Response;
+import net.thucydides.core.annotations.Steps;
+import actions.BasketApiActions;
+import org.junit.Assert;
+
+import java.util.List;
+import java.util.Map;
+
+import static org.assertj.core.internal.bytebuddy.matcher.ElementMatchers.is;
+
+public class BasketSteps {
+
+    @Steps
+    BasketApiActions basketApi;
+    BasketPage basketPage;
+
+    @Given("I am logged in via API")
+    public void i_am_logged_in_via_api() {
+        basketApi.login("juicebox.qa@test.com", "Test@1234");
+    }
+
+    @When("I add product {int} to the basket")
+    public void i_add_product_to_basket(int productId) {
+        basketApi.addItemToBasket(productId);
+    }
+
+    @Then("the basket should contain product {int}")
+    public void basket_should_contain_product(int expectedProductId) {
+        Response response = basketApi.getBasketContents();
+        List<Map<String, Object>> items = response.jsonPath().getList("data.Products");
+
+        boolean found = items.stream()
+                .anyMatch(p -> ((Integer) p.get("id")) == expectedProductId);
+
+        Assert.assertTrue("Basket should contain product ID " + expectedProductId, found);
+    }
+
+    @Given("I navigate to the basket page")
+    public void i_navigate_to_the_basket_page() {
+        basketPage.open();
+    }
+
+    @When("I manually remove the item from the basket")
+    public void i_manually_remove_the_item_from_the_basket() {
+        basketPage.removeFirstItem();
+    }
+
+
+
+    @Then("the basket should be empty")
+    public void the_basket_should_be_empty() {
+        Response response = basketApi.getBasketContents();
+        response.then().statusCode(200);
+        List<?> items = response.jsonPath().getList("data.Products");
+        Assert.assertTrue("Basket is not empty!", items.isEmpty());
+    }
+
+}

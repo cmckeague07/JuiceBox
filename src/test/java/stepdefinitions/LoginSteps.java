@@ -15,6 +15,16 @@ public class LoginSteps {
     LoginActions login;
     LoginActions loginActions;
 
+    //Test method for backgrounds on features requiring a user to be logged in
+    @Given("I am logged in as a valid user")
+    public void i_am_logged_in_as_a_valid_user() {
+        login.navigateToLoginPage();
+        login.dismissPopupIfPresent();
+        login.enterEmail();
+        login.enterPassword();
+        login.clickLogin();
+    }
+
     @Given("the user is on the login page")
     public void the_user_is_on_the_login_page() {
         login.navigateToLoginPage();

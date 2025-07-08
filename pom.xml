@@ -16,9 +16,6 @@
         <java.version>17</java.version>
     </properties>
 
-
-
-
     <dependencies>
         <!-- Serenity Core -->
         <dependency>
@@ -75,10 +72,14 @@
             <artifactId>webdrivermanager</artifactId>
             <version>5.7.0</version>
         </dependency>
+
+        <dependency>
+            <groupId>net.serenity-bdd</groupId>
+            <artifactId>serenity-rest-assured</artifactId>
+            <version>${serenity.version}</version>
+        </dependency>
+
     </dependencies>
-
-
-
 
     <build>
         <plugins>
