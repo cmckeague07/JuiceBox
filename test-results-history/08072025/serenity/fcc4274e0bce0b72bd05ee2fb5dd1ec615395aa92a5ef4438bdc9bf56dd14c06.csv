@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Login","User logs in with valid credentials","SUCCESS","2025-07-08T00:37:24.2783742+01:00[Europe/London]","0.0","13.11"
+"Login","Invalid login attempts are rejected","SUCCESS","2025-07-08T00:37:39.1585131+01:00[Europe/London]","0.0","69.65"

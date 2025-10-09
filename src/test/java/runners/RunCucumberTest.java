@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags="@All",
+        tags="@OnlyThis",
         plugin = {
                 "pretty",
                 "junit:C:/JuiceBox/JuiceBoxAutomation/junit-report.xml",

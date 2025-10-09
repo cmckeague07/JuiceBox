@@ -1,0 +1,23 @@
+Running Juice Shop Locally (localhost:3000)
+
+## Prerequisites
+- Node.js (tested working with **v20.18.0**)
+- NPM (comes with Node.js)
+- Juice Shop project extracted locally (e.g. `C:\juice-shop-local\juice-shop_19.0.0`)
+
+## Steps
+
+1. **Open a terminal** (CMD or PowerShell).
+2. **Navigate to the Juice Shop directory**:
+   ```bash
+   cd C:\juice-shop-local\juice-shop_19.0.0
+
+Install dependencies (first-time setup or after a clean):
+npm install --force --legacy-peer-deps
+
+Start the application:
+npm start
+
+Access in browser:
+Open http://localhost:3000
+

@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Basket Functionality","Add a product to the basket via API","SUCCESS","2025-07-08T00:36:25.0334461+01:00[Europe/London]","0.0","36.56"
+"Basket Functionality","Remove a product from the basket via API","SUCCESS","2025-07-08T00:37:04.8532251+01:00[Europe/London]","0.0","15.8"
+"Login","User logs in with valid credentials","SUCCESS","2025-07-08T00:37:24.2783742+01:00[Europe/London]","0.0","13.11"
+"Login","Invalid login attempts are rejected","SUCCESS","2025-07-08T00:37:39.1585131+01:00[Europe/London]","0.0","69.65"

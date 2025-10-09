@@ -1,0 +1,1 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="0" name="Basket Functionality" skipped="0" tests="2" time="47.1" timestamp="2025-10-07 03:09:09"><testcase name="Add a product to the basket via API"/><testcase name="Remove a product from the basket via API"/></testsuite>

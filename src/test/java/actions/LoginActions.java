@@ -1,8 +1,10 @@
 package actions;
 
+import com.google.inject.Inject;
 import net.serenitybdd.core.annotations.findby.By;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.annotations.Step;
 import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
@@ -10,15 +12,19 @@ import org.openqa.selenium.WebElement;
 
 import java.util.concurrent.TimeUnit;
 
+
 public class LoginActions extends UIInteractionSteps {
     String username = ConfigReader.get("login.username");
     String password = ConfigReader.get("login.password");
     String question = ConfigReader.get("login.securityQuestion");
     String answer = ConfigReader.get("login.securityAnswer");
 
-    @Step("Navigate to login page")
+    @Inject
+    LoginPage loginPage;
+
+    @Step("Navigate to Login page")
     public void navigateToLoginPage() {
-        openUrl("https://juice-shop.herokuapp.com/#/login");
+        loginPage.open();  // this triggers proper browser launch
     }
 
     @Step("Dismiss welcome popup if present")
@@ -55,11 +61,16 @@ public class LoginActions extends UIInteractionSteps {
 
     @Step("Verify successful login")
     public void verifySuccessfulLogin() {
+        String currentUrl = getDriver().getCurrentUrl();
+        System.out.println("Current URL after login: " + currentUrl);
 
         Assert.assertFalse("Still on login page after login attempt!",
-                getDriver().getCurrentUrl().contains("/login"));
+                currentUrl.contains("/#/login"));
 
+        Assert.assertTrue("User not redirected to home page!",
+                currentUrl.contains("/#/search"));
     }
+
 
     @Step("Enter email {0}")
     public void enterEmailDT(String email) {

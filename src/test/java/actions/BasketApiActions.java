@@ -2,37 +2,43 @@ package actions;
 
 import io.restassured.response.Response;
 import net.serenitybdd.rest.SerenityRest;
+import net.thucydides.core.annotations.Step;
 
 import java.util.List;
 import java.util.Map;
 
 import static io.restassured.http.ContentType.JSON;
+import static net.serenitybdd.rest.RestRequests.given;
 
 public class BasketApiActions {
 
     public String token;
     public int basketId;
+    public int basketItemId;
+
+    // Base URL for local Juice Shop
+    private static final String BASE_URL = "http://localhost:3000";
 
     public void login(String email, String password) {
         Response response = SerenityRest
                 .given()
                 .contentType(JSON)
                 .body("{\"email\":\"" + email + "\", \"password\":\"" + password + "\"}")
-                .post("https://juice-shop.herokuapp.com/rest/user/login");
+                .post("http://localhost:3000/rest/user/login");
 
-        System.out.println("🔑 LOGIN raw response: " + response.getBody().asPrettyString());
+        System.out.println("LOGIN raw response: " + response.getBody().asPrettyString());
 
         token = response.jsonPath().getString("authentication.token");
         basketId = response.jsonPath().getInt("authentication.bid");
     }
-    public int basketItemId;
-public void addItemToBasket(int productId) {
+
+    public void addItemToBasket(int productId) {
         Response response = SerenityRest
                 .given()
                 .header("Authorization", "Bearer " + token)
                 .contentType(JSON)
                 .body("{\"BasketId\": " + basketId + ", \"ProductId\": " + productId + ", \"quantity\": 1}")
-                .post("https://juice-shop.herokuapp.com/api/BasketItems/")
+                .post("http://localhost:3000/api/BasketItems/")
                 .then()
                 .statusCode(200)
                 .extract()
@@ -41,17 +47,34 @@ public void addItemToBasket(int productId) {
         basketItemId = response.jsonPath().getInt("data.id");
     }
 
+    @Step("Get all products")
+    public List<Map<String, Object>> getProducts() {
+        Response response = given()
+                .header("Authorization", "Bearer " + token)
+                .when()
+                .get("http://localhost:3000/api/Products")
+                .then()
+                .statusCode(200)
+                .extract()
+                .response();
+
+        System.out.println("Fetched products, count: " + response.jsonPath().getList("data").size());
+        return response.jsonPath().getList("data");
+    }
+
+
     public Response getBasketContents() {
         Response response = SerenityRest
                 .given()
                 .header("Authorization", "Bearer " + token)
-                .get("https://juice-shop.herokuapp.com/rest/basket/" + basketId);
+                .get("http://localhost:3000/rest/basket/" + basketId);
 
         System.out.println("Basket GET Status: " + response.statusCode());
         System.out.println("Basket response:\n" + response.getBody().asPrettyString());
 
         return response;
     }
+
     public void removeItemFromBasket() {
         Response response = getBasketContents();
         List<Map<String, Object>> items = response.jsonPath().getList("data.Products");
@@ -60,7 +83,6 @@ public void addItemToBasket(int productId) {
             throw new RuntimeException("No items in basket to remove.");
         }
 
-        // This is the correct ID to use in the DELETE request
         Integer basketItemId = (Integer) items.get(0).get("BasketItem.id");
         if (basketItemId == null) {
             throw new RuntimeException("BasketItem ID is missing from the first basket item.");
@@ -69,17 +91,8 @@ public void addItemToBasket(int productId) {
         SerenityRest
                 .given()
                 .header("Authorization", "Bearer " + token)
-                .delete("https://juice-shop.herokuapp.com/api/BasketItems/" + basketItemId)
+                .delete("http://localhost:3000/api/BasketItems/" + basketItemId)
                 .then()
                 .statusCode(200);
     }
-
-
-
-
-
-
-
-
-
 }
