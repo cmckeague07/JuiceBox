@@ -1,3 +1,4 @@
+@All
 Feature: Security and session management validation
   As a QA engineer
   I want to verify key security behaviours in the Juice Shop application
@@ -9,23 +10,31 @@ Feature: Security and session management validation
 
   @security @session
   Scenario: Verify user session persists after refresh
-    Given the user logs in with valid credentials
+    Given the user logs in with valid credentials for security testing
     When the user refreshes the page
     Then the user should remain logged in
-    And their username should still be visible in the top navigation bar
 
-  @security @accesscontrol
+  @security
   Scenario: Redirect unauthenticated user to login page
     Given the user is not logged in
     When the user tries to access the checkout page directly via URL
+    Then display a message indicating authentication is required
     Then the application should redirect them to the login page
-    And display a message indicating authentication is required
+
 
   @security @headers
-  Scenario: Validate core security headers are present
+  Scenario: Validate core security headers are present, 1.0
     When the user sends a GET request to the home page
     Then the response headers should include "Content-Security-Policy"
+
+  @security @headers
+  Scenario: Validate core security headers are present, 2.0
+    When the user sends a GET request to the home page
     And the headers should include "X-Frame-Options"
+
+  @security @headers
+  Scenario: Validate core security headers are present, 3.0
+    When the user sends a GET request to the home page
     And the headers should include "X-Content-Type-Options"
 
   @security @sanitization

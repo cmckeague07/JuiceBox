@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Security and session management validation" skipped="0" tests="1" time="15.28" timestamp="2025-10-30 03:26:07"><testcase name="Redirect unauthenticated user to login page"><failure message="Expected redirect to login, but was: http://localhost:3000/#/address/select" type="java.lang.AssertionError">Expected redirect to login, but was: http://localhost:3000/#/address/select</failure><system-err>Expected redirect to login, but was: http://localhost:3000/#/address/select&#13;
+stepdefinitions.SecurityStepDefinitions.verifyRedirectedToLoginPage(SecurityStepDefinitions.java:78)&#13;
+✽.the application should redirect them to the login page(file:///C:/Software%20Testing%20Projects/JuiceBox-Automation/src/test/resources/features/04_security.feature:21)&#13;
+</system-err></testcase></testsuite>

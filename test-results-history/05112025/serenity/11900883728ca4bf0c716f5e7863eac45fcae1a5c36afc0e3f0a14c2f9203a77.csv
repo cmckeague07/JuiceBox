@@ -1,0 +1,5 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Security and session management validation","Validate core security headers are present","FAILURE","2025-10-30T02:48:45.3426312Z[Europe/London]","0.0","12.63"
+"Security and session management validation","Validate core security headers are present, 1.0","FAILURE","2025-11-05T01:59:04.5972059Z[Europe/London]","0.0","8.61"
+"Security and session management validation","Validate core security headers are present, 2.0","SUCCESS","2025-11-05T01:59:14.9293098Z[Europe/London]","0.0","7.0"
+"Security and session management validation","Validate core security headers are present, 3.0","SUCCESS","2025-11-05T01:59:22.7502928Z[Europe/London]","0.0","8.92"

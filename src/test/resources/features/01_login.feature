@@ -1,7 +1,7 @@
 @All
 Feature: Login
 
-  @OnlyThis
+
   Scenario: User logs in with valid credentials
     Given the user is on the login page
     When the user logs in with valid credentials
@@ -9,7 +9,7 @@ Feature: Login
     When I click the logout button
     Then I should be logged out
 
-  @OnlyThis
+
   Scenario Outline: Invalid login attempts are rejected
     Given the user is on the login page
     When the user attempts to log in with "<email>" and "<password>"

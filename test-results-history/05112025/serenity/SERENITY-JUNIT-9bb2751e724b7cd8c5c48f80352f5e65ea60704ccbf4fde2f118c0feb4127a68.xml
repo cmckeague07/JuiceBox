@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Security and session management validation" skipped="0" tests="1" time="25.52" timestamp="2025-11-04 10:34:41"><testcase name="Prevent script injection in search field"><failure message="❌ Search result text not escaped — potential XSS issue!" type="java.lang.AssertionError">❌ Search result text not escaped — potential XSS issue!</failure><system-err>❌ Search result text not escaped — potential XSS issue!&#13;
+stepdefinitions.SecurityStepDefinitions.searchResultsShouldBeEscaped(SecurityStepDefinitions.java:120)&#13;
+✽.the search results should safely render escaped text instead of executing the script(file:///C:/Software%20Testing%20Projects/JuiceBox-Automation/src/test/resources/features/04_security.feature:44)&#13;
+</system-err></testcase></testsuite>

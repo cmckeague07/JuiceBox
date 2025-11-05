@@ -10,7 +10,6 @@ Feature: Checkout Functionality
     Given I am logged in as a valid user
     And I have added an item to the basket
 
-  @OnlyThis
   Scenario: Successful checkout with new address and payment method
     When I open the basket
     And I proceed to checkout

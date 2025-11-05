@@ -31,6 +31,15 @@ public class LoginSteps {
         login.dismissPopupIfPresent();
     }
 
+    @When("the user logs in with valid credentials for security testing")
+    public void the_user_logs_in_with_valid_credentials_for_security_testing() {
+        login.navigateToLoginPage();
+        login.dismissPopupIfPresent();
+        login.enterEmail();
+        login.enterPassword();
+        login.clickLogin();
+    }
+
     @When("the user logs in with valid credentials")
     public void the_user_logs_in_with_valid_credentials() {
         login.enterEmail();

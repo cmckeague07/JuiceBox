@@ -1,0 +1,6 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Checkout Functionality","Checkout with invalid coupon code","FAILURE","2025-10-05T16:57:21.6543031+01:00[Europe/London]","0.0","14.02"
+"Security and session management validation","Validate core security headers are present","FAILURE","2025-10-30T02:48:45.3426312Z[Europe/London]","0.0","12.63"
+"Security and session management validation","Redirect unauthenticated user to login page","FAILURE","2025-11-05T01:58:52.1995614Z[Europe/London]","0.0","11.37"
+"Security and session management validation","Validate core security headers are present, 1.0","FAILURE","2025-11-05T01:59:04.5972059Z[Europe/London]","0.0","8.61"
+"Security and session management validation","Prevent script injection in search field","FAILURE","2025-11-05T01:59:33.0049832Z[Europe/London]","0.0","18.77"

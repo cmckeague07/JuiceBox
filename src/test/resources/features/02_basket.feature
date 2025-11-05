@@ -4,13 +4,13 @@ Feature: Basket Functionality
   Background:
     Given I am logged in as a valid user
 
-  @OnlyThis
+
   Scenario: Add a product to the basket via API
     Given I am logged in via API
     When I add product 1 to the basket
     Then the basket should contain product 1
 
-  @OnlyThis
+
   Scenario: Remove a product from the basket via API
     Given I am logged in via API
     And I navigate to the basket page

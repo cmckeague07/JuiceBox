@@ -38,16 +38,16 @@ public class BasketSteps {
 
     @Given("I have added an item to the basket")
     public void i_have_added_an_item_to_the_basket() {
-        // Step 2️⃣ - Click the first "Add to Basket" button
+
         WebElement addToBasketButton = getDriver()
                 .findElement(By.cssSelector("button[aria-label='Add to Basket']"));
         addToBasketButton.click();
 
-        // Small wait to let the UI update
+
         try { Thread.sleep(1000); } catch (InterruptedException e) { e.printStackTrace(); }
         basketPage.open();
 
-        // Find all spans in the quantity column and sum only valid integers
+
         List<WebElement> quantityElements = getDriver().findElements(By.cssSelector(".mat-column-quantity span"));
 
         int basketItemCount = quantityElements.stream()

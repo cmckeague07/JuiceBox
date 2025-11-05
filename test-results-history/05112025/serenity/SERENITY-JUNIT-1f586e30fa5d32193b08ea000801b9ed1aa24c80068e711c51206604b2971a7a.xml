@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Security and session management validation" skipped="0" tests="3" time="23.46" timestamp="2025-10-30 02:56:39"><testcase name="Validate core security headers are present, 1.0"><failure message="❌ Missing security header: Content-Security-Policy" type="java.lang.AssertionError">❌ Missing security header: Content-Security-Policy</failure><system-err>❌ Missing security header: Content-Security-Policy&#13;
+actions.SecurityHeaderActions.verifyHeaderPresent(SecurityHeaderActions.java:38)&#13;
+stepdefinitions.SecurityStepDefinitions.theResponseHeadersShouldInclude(SecurityStepDefinitions.java:49)&#13;
+✽.the response headers should include "Content-Security-Policy"(file:///C:/Software%20Testing%20Projects/JuiceBox-Automation/src/test/resources/features/04_security.feature:26)&#13;
+</system-err></testcase><testcase name="Validate core security headers are present, 2.0"/><testcase name="Validate core security headers are present, 3.0"/></testsuite>

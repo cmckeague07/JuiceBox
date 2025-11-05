@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Basket Functionality","Add a product to the basket via API","SUCCESS","2025-11-05T01:56:54.5763884Z[Europe/London]","0.0","29.98"
+"Basket Functionality","Remove a product from the basket via API","SUCCESS","2025-11-05T01:57:29.4732354Z[Europe/London]","0.0","16.67"

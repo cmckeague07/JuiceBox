@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Checkout Functionality","Checkout with invalid coupon code","FAILURE","2025-10-05T16:57:21.6543031+01:00[Europe/London]","0.0","14.02"
+"Security and session management validation","Validate core security headers are present","FAILURE","2025-10-30T02:48:45.3426312Z[Europe/London]","0.0","12.63"
