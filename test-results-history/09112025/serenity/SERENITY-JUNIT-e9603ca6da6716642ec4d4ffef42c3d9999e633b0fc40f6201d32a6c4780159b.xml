@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><testsuite errors="0" failures="1" name="Form and checkout validation scenarios" skipped="0" tests="2" time="50.57" timestamp="2025-11-09 10:21:43"><testcase name="Required field validation in the address form"/><testcase name="Basket contents persist after page refresh during checkout"><failure message="&#13;&#10;Expecting:&#13;&#10; &lt;0&gt;&#13;&#10;to be equal to:&#13;&#10; &lt;1&gt;&#13;&#10;but was not." type="org.opentest4j.AssertionFailedError">&#13;
+Expecting:&#13;
+ &lt;0&gt;&#13;
+to be equal to:&#13;
+ &lt;1&gt;&#13;
+but was not.</failure><system-err>&#13;
+Expecting:&#13;
+ &lt;0&gt;&#13;
+to be equal to:&#13;
+ &lt;1&gt;&#13;
+but was not.&#13;
+stepdefinitions.ValidationStepDefinitions.basketShouldPersistAfterRefresh(ValidationStepDefinitions.java:94)&#13;
+✽.the basket should still contain the previously added item(file:///C:/Software%20Testing%20Projects/JuiceBox-Automation/src/test/resources/features/05_validation.feature:19)&#13;
+</system-err></testcase></testsuite>

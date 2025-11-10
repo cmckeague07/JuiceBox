@@ -17,7 +17,6 @@ public class SecurityHeaderActions {
     /**
      * Send a GET request to the Juice Shop home page
      */
-    @Step("Send GET request to the home page")
     public void sendGetRequestToHomePage() {
         try {
             HttpURLConnection connection = (HttpURLConnection) new URL(BASE_URL).openConnection();

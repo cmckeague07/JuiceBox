@@ -16,7 +16,6 @@ public class AddressActions {
         addressPage.addNewAddress(country, name, mobile, zip, address, city, state);
     }
 
-
     @Step("Select newly added address")
     public void selectLatestAddress() {
         addressPage.selectLatestAddress();

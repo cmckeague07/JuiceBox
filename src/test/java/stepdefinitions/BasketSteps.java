@@ -86,8 +86,6 @@ public class BasketSteps {
         basketPage.removeFirstItem();
     }
 
-
-
     @Then("the basket should be empty")
     public void the_basket_should_be_empty() {
         Response response = basketApi.getBasketContents();

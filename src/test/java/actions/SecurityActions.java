@@ -18,12 +18,10 @@ public class SecurityActions extends PageObject {
     // Use your local Juice Shop instance
     private final String localUrl = "http://localhost:3000";
 
-    @Step("Open the local Juice Shop application")
     public void openJuiceShop() {
         getDriver().get(localUrl);
     }
 
-    @Step("Clear browser cookies and sessions")
     public void clearCookies() {
         getDriver().manage().deleteAllCookies();
         try {
@@ -36,12 +34,10 @@ public class SecurityActions extends PageObject {
         }
     }
 
-    @Step("Refresh the page")
     public void refreshPage() {
         getDriver().navigate().refresh();
     }
 
-    @Step("Verify the user remains logged in")
     public boolean verifyUserStillLoggedIn() {
         // Wait for 'Your Basket' element to become visible
         WebElementFacade basket = $(By.xpath("//*[contains(text(),'Your Basket')]"))
@@ -52,7 +48,6 @@ public class SecurityActions extends PageObject {
         return basket.isVisible();
     }
 
-    @Step("Navigate to main shop page")
     public void navigateToHomePage() {
         getDriver().get("http://localhost:3000/#/");
         getDriver().manage().deleteAllCookies();
@@ -67,7 +62,6 @@ public class SecurityActions extends PageObject {
         }
     }
 
-    @Step("Perform search for query: {0}")
     public void performSearch(String query) {
         WebDriverWait wait = new WebDriverWait(getDriver(), 10);
 
@@ -87,7 +81,6 @@ public class SecurityActions extends PageObject {
 
 
 
-    @Step("Check if alert dialog appeared")
     public boolean isAlertPresent() {
         try {
             getDriver().switchTo().alert();
@@ -97,7 +90,6 @@ public class SecurityActions extends PageObject {
         }
     }
 
-    @Step("Verify if search results are safely escaped")
     public boolean isSearchResultEscaped() {
         // Example: Ensure raw "<script>" tags do NOT appear in rendered results
         String pageSource = getDriver().getPageSource().toLowerCase();

@@ -7,14 +7,13 @@ public class BasketActions {
     @Steps
     BasketPage basketPage;
 
-    @Step("Open the basket page")
+
     public void openBasketPage() {
-        basketPage.clickBasketIcon(); // uses @DefaultUrl → localhost:3000/#/basket
+        basketPage.clickBasketIcon();
     }
 
-    @Step("Proceed to checkout")
     public void proceedToCheckout() {
-        basketPage.clickCheckout(); // clicks the checkout button → navigates to /#/address/saved
-        basketPage.waitForTextToAppear("Add New Address"); // confirm next page loaded
+        basketPage.clickCheckout();
+        basketPage.waitForTextToAppear("Add New Address");
     }
 }

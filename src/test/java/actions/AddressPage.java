@@ -95,6 +95,15 @@ public class AddressPage extends PageObject {
 
 
 
+    public boolean isButtonEnabled(String buttonText) {
+        return $(By.xpath("//span[normalize-space(text())='" + buttonText + "']/ancestor::button"))
+                .waitUntilVisible()
+                .isEnabled();
+    }
+
+    public boolean isAddressFormVisible() {
+        return $(By.xpath("//app-address-create")).waitUntilVisible().isVisible();
+    }
 
 }
 

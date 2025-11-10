@@ -33,11 +33,9 @@ public class BasketPage extends PageObject {
         increaseQuantityButton.click();
     }
 
-
     public String getTotalPriceText() {
         return $(".total-price").getText();
     }
-
 
     public void clickCheckout() {
         waitABit(500);  // brief half-second buffer

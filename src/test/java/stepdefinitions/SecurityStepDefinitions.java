@@ -16,7 +16,7 @@ public class SecurityStepDefinitions {
     @Steps
     SecurityActions securityActions;
 
-    // ---------- BACKGROUND STEPS ----------
+    SecurityHeaderActions securityHeaderActions = new SecurityHeaderActions();
 
     @Given("the user opens the Juice Shop application")
     public void openJuiceShopApp() {
@@ -27,7 +27,6 @@ public class SecurityStepDefinitions {
     public void clearBrowserCookies() {
         securityActions.clearCookies();
     }
-
 
     @When("the user refreshes the page")
     public void refreshPage() {
@@ -43,10 +42,6 @@ public class SecurityStepDefinitions {
                 isLoggedIn
         );
     }
-
-
-
-    SecurityHeaderActions securityHeaderActions = new SecurityHeaderActions();
 
     @When("the user sends a GET request to the home page")
     public void theUserSendsAGetRequestToTheHomePage() {

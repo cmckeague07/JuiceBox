@@ -22,12 +22,10 @@ public class LoginActions extends UIInteractionSteps {
     @Inject
     LoginPage loginPage;
 
-    @Step("Navigate to Login page")
     public void navigateToLoginPage() {
-        loginPage.open();  // this triggers proper browser launch
+        loginPage.open();
     }
 
-    @Step("Dismiss welcome popup if present")
     public void dismissPopupIfPresent() {
         try {
             WebElement closePopup = $(By.cssSelector("button[aria-label='Close Welcome Banner']"));
@@ -38,17 +36,16 @@ public class LoginActions extends UIInteractionSteps {
 
         }
     }
-    @Step("Enter email")
+
     public void enterEmail() {
         $(By.id("email")).type(username);
     }
 
-    @Step("Enter password")
     public void enterPassword() {
         $(By.id("password")).type(password);
     }
 
-    @Step("Click login")
+
     public void clickLogin() {
         WebElementFacade loginButton = $(By.id("loginButton"));
         if (loginButton.isEnabled()) {
@@ -59,7 +56,6 @@ public class LoginActions extends UIInteractionSteps {
     }
 
 
-    @Step("Verify successful login")
     public void verifySuccessfulLogin() {
         String currentUrl = getDriver().getCurrentUrl();
         System.out.println("Current URL after login: " + currentUrl);
@@ -72,12 +68,12 @@ public class LoginActions extends UIInteractionSteps {
     }
 
 
-    @Step("Enter email {0}")
+
     public void enterEmailDT(String email) {
         $(By.id("email")).type(email);
     }
 
-    @Step("Enter password {0}")
+
     public void enterPasswordDT(String password) {
         $(By.id("password")).type(password);
     }
@@ -86,8 +82,7 @@ public class LoginActions extends UIInteractionSteps {
         return $(By.id("loginButton")).isEnabled();
     }
 
-    // This method just creates a dummy "pass" step
-    @Step("Login button disabled - no login attempted, test considered passed.")
+
     public void markAsPassedWithoutExecution() {
         // Nothing needed here
     }

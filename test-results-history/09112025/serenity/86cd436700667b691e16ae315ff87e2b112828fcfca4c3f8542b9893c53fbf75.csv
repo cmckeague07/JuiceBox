@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Security and session management validation","Verify user session persists after refresh","SUCCESS","2025-11-09T22:20:31.7283282Z[Europe/London]","0.0","19.21"
+"Security and session management validation","Validate core security headers are present, 2.0","SUCCESS","2025-11-09T22:21:13.9873955Z[Europe/London]","0.0","7.81"
+"Security and session management validation","Validate core security headers are present, 3.0","SUCCESS","2025-11-09T22:21:22.6059586Z[Europe/London]","0.0","6.96"

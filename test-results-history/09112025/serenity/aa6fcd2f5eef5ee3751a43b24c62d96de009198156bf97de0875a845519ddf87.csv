@@ -1,0 +1,7 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Security and session management validation","Verify user session persists after refresh","SUCCESS","2025-11-09T22:20:31.7283282Z[Europe/London]","0.0","19.21"
+"Security and session management validation","Redirect unauthenticated user to login page","FAILURE","2025-11-09T22:20:53.3593335Z[Europe/London]","0.0","9.65"
+"Security and session management validation","Validate core security headers are present, 1.0","FAILURE","2025-11-09T22:21:04.9400725Z[Europe/London]","0.0","8.12"
+"Security and session management validation","Validate core security headers are present, 2.0","SUCCESS","2025-11-09T22:21:13.9873955Z[Europe/London]","0.0","7.81"
+"Security and session management validation","Validate core security headers are present, 3.0","SUCCESS","2025-11-09T22:21:22.6059586Z[Europe/London]","0.0","6.96"
+"Security and session management validation","Prevent script injection in search field","FAILURE","2025-11-09T22:21:30.9423553Z[Europe/London]","0.0","11.3"
