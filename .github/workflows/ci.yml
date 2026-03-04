@@ -27,7 +27,7 @@ jobs:
           sleep 20
 
       - name: Run Serenity Tests
-        run: mvn clean verify -Dwebdriver.chrome.arguments="--headless,--no-sandbox,--disable-dev-shm-usage"
+        run: mvn clean verify
 
       - name: Upload Serenity Report
         if: always()
