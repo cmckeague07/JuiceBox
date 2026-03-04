@@ -11,8 +11,8 @@ import org.junit.runner.RunWith;
         tags="@All",
         plugin = {
                 "pretty",
-                "junit:C:/JuiceBox/JuiceBoxAutomation/junit-report.xml",
-                "html:C:/JuiceBox/JuiceBoxAutomation/html-report",
+                "junit:target/junit-report.xml",
+                "html:target/html-report",
 
         }
 )
