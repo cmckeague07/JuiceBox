@@ -19,11 +19,6 @@ public class LogoutSteps extends LoginActions {
     @Managed
     WebDriver driver;
 
-    @Before
-    public void maximizeWindow() {
-        driver.manage().window().maximize();
-    }
-
     @When("I click the logout button")
     public void userClicksLogout() {
         logoutPage.clickLogout();
