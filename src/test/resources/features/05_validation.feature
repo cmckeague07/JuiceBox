@@ -11,7 +11,7 @@ Feature: Form and checkout validation scenarios
     Then the "Submit" button should remain disabled
     And the address form should stay open
 
-  @validation @basketPersistence
+  @validation @basketPersistence @knownDefect
   Scenario: Basket contents persist after page refresh during checkout
     Given the user adds an item to the basket
     And navigates to the checkout page

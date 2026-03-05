@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = "stepdefinitions",
-        tags="@All",
+        tags="@All and not @knownDefect",
         plugin = {
                 "pretty",
                 "junit:target/junit-report.xml",

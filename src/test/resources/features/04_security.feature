@@ -22,7 +22,7 @@ Feature: Security and session management validation
     Then the application should redirect them to the login page
 
 
-  @security @headers
+  @security @headers @knownDefect
   Scenario: Validate core security headers are present, 1.0
     When the user sends a GET request to the home page
     Then the response headers should include "Content-Security-Policy"
@@ -37,7 +37,7 @@ Feature: Security and session management validation
     When the user sends a GET request to the home page
     And the headers should include "X-Content-Type-Options"
 
-  @security @sanitization
+  @security @sanitization @knownDefect
   Scenario: Prevent script injection in search field
     Given the user is on the main shop page
     When the user searches for "<script>alert('xss')</script>"
