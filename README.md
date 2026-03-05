@@ -34,7 +34,7 @@ JuiceBox-Automation/
 ├── Juicebox Startup Steps.txt    # Local setup guide for running tests
 │
 └── scripts/
-    └── run_lighthouse.bat            # CLI shortcut for Lighthouse audits
+    └── run_lighthouse.bat             # CLI shortcut for Lighthouse audits
 ```
 
 ---
@@ -154,7 +154,7 @@ This project was built over six months (May–Nov 2025) and represents a complet
 
 ###  Version
 **v2.0 – Phase 2 Complete**  
-Released: *November 2025*  
+Released: *March 2026*  
 
 ---
 
