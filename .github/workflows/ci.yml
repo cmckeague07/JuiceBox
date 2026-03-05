@@ -21,14 +21,27 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
+      - name: Install Chrome
+        run: |
+          wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+          sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
       - name: Start Juice Shop
         run: |
           docker pull bkimminich/juice-shop
           docker run -d -p 3000:3000 bkimminich/juice-shop
           sleep 20
 
+      - name: Register test user
+        run: |
+          curl -X POST http://localhost:3000/api/Users \
+            -H "Content-Type: application/json" \
+            -d '{"email":"juicebox.qa@test.com","password":"Test@1234","passwordRepeat":"Test@1234","securityQuestion":{"id":2,"question":"Your favorite movie?"},"securityAnswer":"Spiderman"}'
+
       - name: Run Serenity Tests
-        run: mvn clean verify
+        run: mvn clean verify -Dchrome.switches="--headless,--no-sandbox,--disable-dev-shm-usage,--disable-gpu,--window-size=1920,1080"
 
       - name: Upload Serenity Report
         if: always()
@@ -36,4 +49,3 @@ jobs:
         with:
           name: serenity-report
           path: target/site/serenity/
-
