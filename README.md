@@ -3,6 +3,8 @@ JuiceBox Automation Framework
 
 ![CI Status](https://github.com/cmckeague07/JuiceBox/actions/workflows/ci.yml/badge.svg)
 
+📊 [Latest CI Run Test Results — Serenity Report (06-03-2026)](test-results-history/06032026/serenity/index.html)
+
 ---
 
 ### Overview
