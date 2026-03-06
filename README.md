@@ -145,7 +145,7 @@ reports/lighthouse/lighthouse-report.json
 ---
 
 ###  Highlights & Learnings
-This project was built over six months (May–Nov 2025) and represents a complete QA lifecycle in one repository:
+This project was built over six months (May–Nov 2025) with CI/CD integration added in March 2026, it covers the full QA lifecycle including:
 - Framework design & abstraction principles  
 - Synchronization handling and shared state logic  
 - Serenity BDD reporting customization  
