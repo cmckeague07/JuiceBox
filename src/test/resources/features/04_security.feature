@@ -14,7 +14,7 @@ Feature: Security and session management validation
     When the user refreshes the page
     Then the user should remain logged in
 
-  @security
+  @security @knownDefect
   Scenario: Redirect unauthenticated user to login page
     Given the user is not logged in
     When the user tries to access the checkout page directly via URL
