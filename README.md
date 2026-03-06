@@ -1,6 +1,8 @@
 JuiceBox Automation Framework  
 **A full-stack Serenity BDD automation suite covering functional, API, security, and performance testing for OWASP Juice Shop.**  
 
+![CI Status](https://github.com/cmckeague07/JuiceBox/actions/workflows/ci.yml/badge.svg)
+
 ---
 
 ### Overview
@@ -52,6 +54,28 @@ JuiceBox-Automation/
 
 
 ---
+
+## CI/CD Pipeline
+JuiceBox is integrated with **GitHub Actions** for continuous integration.
+
+On every push to `master`, the pipeline automatically:
+- Spins up a fresh OWASP Juice Shop instance via Docker
+- Registers the test user via the Juice Shop API
+- Executes the full Serenity BDD suite in headless Chrome
+
+
+**17 scenarios total | 13 passing in CI | 4 documented known defects**
+
+### Known Defects (tagged `@knownDefect`, excluded from CI)
+
+| Scenario | Reason |
+|----------|--------|
+| Redirect unauthenticated user to login page | Juice Shop returns a 403 page instead of redirecting to `/#/login` |
+| Missing Content-Security-Policy header | Juice Shop does not serve a CSP header by default |
+| XSS input not properly escaped | Search field blocks script execution but does not HTML-encode the input |
+| Basket contents persist after page refresh | Basket resets on refresh — identified as a Juice Shop application bug |
+
+These scenarios remain in the suite as live defect records and are fully documented. They are excluded from the CI run via Cucumber tag filtering (`@All and not @knownDefect`) rather than deleted, preserving them as evidence of identified issues.
 
 ### How to Run
 
@@ -114,6 +138,7 @@ reports/lighthouse/lighthouse-report.json
 
 
 **Lighthouse Accessibility & Performance Report**
+
 <img width="872" height="744" alt="image" src="https://github.com/user-attachments/assets/1bac224e-a06c-4dc8-bfc6-989ce5db772c" />
 
 
@@ -141,20 +166,9 @@ This project was built over six months (May–Nov 2025) and represents a complet
 
 ---
 
-
-
-###  Future Roadmap (Optional Ideas)
-- GitHub Actions CI pipeline  
-- Dockerized test environment  
-- API mock/stub injection for isolated runs  
-- Custom Serenity dashboard enhancements  
-- Visual regression testing integration  
-
----
-
-###  Version
-**v2.0 – Phase 2 Complete**  
-Released: *March 2026*  
+### Version
+**v3.0 – CI/CD Integration Complete**  
+Released: *March 2026*
 
 ---
 
