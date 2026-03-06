@@ -128,17 +128,22 @@ IntelliJ Run Configurations are pre-configured launch settings that allow you to
 - Run: `serenity:aggregate -DskipTests`
 - Working directory: project root
 
-####  Run Serenity Tests
+
+#### Run Serenity Tests
+```bash
 mvn clean verify
 ```
+
 The Serenity HTML report will be generated under:
 ```
 target/site/serenity/index.html
 ```
 
 #### Run Lighthouse Accessibility & Performance Audit
+```bash
 run_lighthouse.bat
 ```
+
 Outputs:
 ```
 reports/lighthouse/lighthouse-report.html
