@@ -112,6 +112,20 @@ http://localhost:3000/
 
 You can now execute all functional and performance tests against this local instance.
 
+#### Setting Up Run Configurations in IntelliJ
+IntelliJ Run Configurations are pre-configured launch settings that allow you to execute the test suite and generate reports directly from the IDE without using the terminal.
+
+**RunCucumberTest**
+- Type: JUnit
+- Class: `runners.RunCucumberTest`
+- JVM arguments: `-ea`
+- Working directory: `$MODULE_WORKING_DIR$`
+
+**Generate-SerenityReport**
+- Type: Maven
+- Run: `serenity:aggregate -DskipTests`
+- Working directory: project root
+
 ####  Run Serenity Tests
 mvn clean verify
 ```

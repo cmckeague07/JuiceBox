@@ -41,7 +41,9 @@ jobs:
             -d '{"email":"juicebox.qa@test.com","password":"Test@1234","passwordRepeat":"Test@1234","securityQuestion":{"id":2,"question":"Your favorite movie?"},"securityAnswer":"Spiderman"}'
 
       - name: Run Serenity Tests
-        run: mvn clean verify -Dchrome.switches="--headless,--no-sandbox,--disable-dev-shm-usage,--disable-gpu,--window-size=1920,1080"
+        run: |
+          mvn clean verify -Dchrome.switches="--headless,--no-sandbox,--disable-dev-shm-usage,--disable-gpu,--window-size=1920,1080"
+          mvn serenity:aggregate
 
       - name: Upload Serenity Report
         if: always()
