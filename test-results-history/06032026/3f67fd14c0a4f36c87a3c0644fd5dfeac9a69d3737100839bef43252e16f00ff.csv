@@ -1,0 +1,3 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Security and session management validation","Validate core security headers are present, 2.0","SUCCESS","2026-03-06T03:57:53.504864852Z[Etc/UTC]","0.0","1.87"
+"Security and session management validation","Validate core security headers are present, 3.0","SUCCESS","2026-03-06T03:57:55.445852281Z[Etc/UTC]","0.0","1.88"
